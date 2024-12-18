@@ -187,10 +187,6 @@ pdata <- pdata.frame(subset_df, index = c("REF_AREA", "TIME_PERIOD"))
 model <- plm(EMPL ~ EPL, data = pdata, effect = "twoways", model = "within")
 summary(model)
 
-# Fixed effects with fixest
-model_1 <- feols(EMPL ~ EPL | REF_AREA + TIME_PERIOD, data = pdata)
-summary(model_1)
-
 # Table with regression results 
 summary_table <- tidy(model)
 
